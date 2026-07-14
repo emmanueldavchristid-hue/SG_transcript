@@ -75,8 +75,87 @@ Pour la diarisation (`pyannote.audio`) :
 2. Accepter les conditions d'usage du modèle `pyannote/speaker-diarization-3.1`
 3. Générer un token d'accès (Settings > Access Tokens) et le mettre dans `.env` sous `HF_TOKEN`
    (ou le passer en `--hf-token` en ligne de commande)
+   
 
-### Utilisation
+# 🔑 Configuration de Hugging Face pour la diarisation (PyAnnote)
+
+Pour utiliser la diarisation des locuteurs avec **PyAnnote**, vous devez disposer d'un compte Hugging Face, d'un **token d'accès** et accepter les conditions d'utilisation des modèles utilisés.
+
+## 1. Créer un compte Hugging Face
+
+* Rendez-vous sur **https://huggingface.co/**
+* Connectez-vous ou créez un compte gratuitement.
+
+---
+
+## 2. Générer un Access Token
+
+1. Cliquez sur votre photo de profil.
+2. Ouvrez **Settings**.
+3. Sélectionnez **Access Tokens**.
+4. Cliquez sur **Create new token**.
+5. Donnez un nom au token (ex. `pyannote-token`).
+6. Choisissez le rôle **Read** (les permissions d'écriture ne sont pas nécessaires).
+7. Cliquez sur **Create token**.
+8. Copiez immédiatement le token généré (il commence par **`hf_`**).
+
+Ajoutez ensuite ce token dans votre fichier `.env` :
+
+```env
+HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+---
+
+## 3. Accepter les conditions d'utilisation des modèles PyAnnote
+
+Les modèles utilisés par PyAnnote sont **gated**. Même avec un token valide, ils ne fonctionneront pas tant que les conditions d'utilisation n'auront pas été acceptées.
+
+Connecté avec le **même compte Hugging Face**, ouvrez successivement les pages suivantes :
+
+### 1. Speaker Diarization 3.1
+
+https://huggingface.co/pyannote/speaker-diarization-3.1
+
+Sur cette page, un encadré apparaît en haut indiquant que vous devez partager vos informations de contact.
+
+Cliquez sur :
+
+**Agree and access repository**
+
+---
+
+### 2. Speaker Diarization Community 1
+
+https://huggingface.co/pyannote/speaker-diarization-community-1
+
+Cliquez également sur :
+
+**Agree and access repository**
+
+---
+
+### 3. Segmentation 3.0
+
+https://huggingface.co/pyannote/segmentation-3.0
+
+Acceptez également les conditions d'utilisation en cliquant sur :
+
+**Agree and access repository**
+
+---
+
+## 4. Vérification
+
+Une fois les trois accès validés :
+
+* votre token Hugging Face est configuré ;
+* les modèles PyAnnote sont accessibles ;
+* aucune modification du code n'est nécessaire.
+
+Vous pouvez relancer l'application normalement.
+
+# Utilisation
 
 **Étape 1 — pendant la réunion**, dans un terminal laissé ouvert :
 ```bash
