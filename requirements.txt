@@ -1,0 +1,12 @@
+requests>=2.31.0
+msal>=1.28.0
+python-dotenv>=1.0.0
+groq>=0.9.0
+
+# --- Mode local (capture audio + transcription + diarisation) ---
+soundcard>=0.4.3
+soundfile>=0.12.1
+numpy>=1.26.0
+faster-whisper>=1.0.0
+pyannote.audio>=3.1.0
+torch>=2.1.0

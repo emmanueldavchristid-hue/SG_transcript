@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:06.500
+<v Christ-Emmanuel Mouhi>Bonjour à tous, merci d'être là. On va faire le point sur le projet de scoring comportemental et sur les deux chantiers IA en cours.</v>
+
+00:00:07.000 --> 00:00:14.200
+<v Fatou Diabaté>Bonjour, côté scoring on a terminé le filtrage par IV, il reste le test de stabilité sur trois variables qu'on n'est pas sûrs de garder.</v>
+
+00:00:15.000 --> 00:00:20.000
+<v Christ-Emmanuel Mouhi>D'accord, on regarde ça ensemble cette semaine. Sinon pour la transcription des réunions Teams, il faut qu'on obtienne le consentement admin sur Azure AD.</v>
+
+00:00:20.500 --> 00:00:27.800
+<v Kouadio Yao>Je peux faire la demande auprès de l'IT dès demain, il faut juste préciser les permissions exactes à activer.</v>
+
+00:00:28.000 --> 00:00:33.500
+<v Fatou Diabaté>Et pour l'assistant documentaire interne, on part sur quelle stack finalement ?</v>
+
+00:00:34.000 --> 00:00:42.000
+<v Christ-Emmanuel Mouhi>On teste ce soir un prototype en open source, LlamaIndex plus une base vectorielle locale, et Groq pour la génération. Si ça marche bien on présente ça la semaine prochaine.</v>
+
+00:00:42.500 --> 00:00:47.000
+<v Kouadio Yao>Parfait, je note l'action pour la demande d'accès Graph API alors.</v>
+
+00:00:47.500 --> 00:00:52.000
+<v Christ-Emmanuel Mouhi>Très bien, on se recale vendredi pour un point d'avancement sur les deux sujets. Merci à tous.</v>
