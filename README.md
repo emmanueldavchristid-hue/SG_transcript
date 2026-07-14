@@ -84,9 +84,9 @@ python local_capture.py --duration 1800   # 30 min ; ou sans --duration + Ctrl+C
 ```
 Ça produit `sample_data/mic.wav` (ta voix) et `sample_data/system.wav` (les autres).
 
-**Étape 2 — après la réunion :**
+**Étape 2 — après la réunion : pour génération de fiche**
 ```bash
-python main_local.py --mic sample_data/mic.wav --system sample_data/system.wav --titre "Point hebdo" --mon-nom "Christ-Emmanuel"
+python main_local.py --mic sample_data/mic.wav --system sample_data/system.wav --titre "Test" --hf-token TON_TOKEN
 ```
 Ça transcrit, diarise, fusionne chronologiquement, génère la fiche et la sauvegarde
 dans `output/`.
