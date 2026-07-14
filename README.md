@@ -1,8 +1,8 @@
-git commit -m "Suppression du fichier .env du dépôt"# SGCI Teams Transcript — Pipeline transcript → fiche de réunion
+# SGCI Teams Transcript — Pipeline transcript → fiche de réunion
 
 ## Ce que fait ce projet
 
-1. Récupère le transcript d'une réunion Teams (via Microsoft Graph API, ou un fichier d'exemple ce soir)
+1. Récupère le transcript d'une réunion Teams 
 2. Parse le transcript WebVTT en tours de parole structurés par locuteur
 3. Génère automatiquement une fiche de réunion (résumé, sujets, décisions, actions) via un LLM
 4. Sauvegarde la fiche en Markdown dans `output/`
@@ -17,9 +17,9 @@ cp .env.example .env
 ```
 
 Puis remplir `.env` avec au minimum `GROQ_API_KEY` (récupérable sur console.groq.com,
-gratuit) pour tester ce soir.
+gratuit) .
 
-## Tester ce soir (mode démo, sans accès Graph API)
+## Test (mode démo, sans accès Graph)
 
 ```bash
 python main.py --demo
@@ -28,28 +28,6 @@ python main.py --demo
 Ça fait tourner tout le pipeline sur `sample_data/sample_transcript.vtt` et produit
 une vraie fiche de réunion dans `output/`. C'est ce mode qui te permet de valider
 l'ensemble de la logique (parsing + prompt + génération) sans dépendre de l'IT.
-
-## Passer en mode réel (une fois l'accès Graph API obtenu)
-
-### Ce qu'il faut demander à l'admin M365/Azure AD de SGCI
-
-1. Créer une **App Registration** dans Azure AD (portal.azure.com)
-2. Générer un **client secret** pour cette app
-3. Accorder le **consentement admin** sur les *Application permissions* Graph API suivantes :
-   - `OnlineMeetingTranscript.Read.All`
-   - `OnlineMeetings.Read.All`
-4. Vérifier que la **transcription automatique** est activée dans les politiques de
-   réunion Teams du tenant (sinon aucun transcript n'est généré à la source)
-5. Récupérer : `Tenant ID`, `Client ID`, `Client Secret` → à mettre dans `.env`
-
-### Lancer en mode réel
-
-```bash
-python main.py --organizer-id "email.organisateur@sgci.ci" --meeting-id "<id_reunion>" --titre "Comité risque hebdo"
-```
-
-L'`meeting-id` s'obtient via `GraphClient.list_online_meetings()` (voir `graph_client.py`,
-fonction déjà prête) une fois l'authentification validée.
 
 ## Structure du projet
 
@@ -129,7 +107,7 @@ dans `output/`.
 - Modèle Whisper "medium" = bon compromis précision/vitesse sur CPU ; passer à "small"
   si le PC rame, "large-v3" si tu as un GPU et veux le maximum de précision
 
-## Prochaines étapes (au-delà de ce soir)
+## Prochaines étapes 
 
 - [ ] Obtenir l'accès Graph API (App Registration + consentement admin)
 - [ ] Tester sur une vraie réunion Teams SGCI
